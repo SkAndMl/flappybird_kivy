@@ -1,0 +1,33 @@
+MainLayout:
+
+<MainLayout>:
+
+    x1 : self.width
+    y1 : self.height
+
+
+    Button:
+        id : btn2
+        opacity : 0
+        disabled : True
+        text : root.btn_string
+        size_hint : None, None
+        background_color : (1, 0, 0, 1)
+        on_press : root.game_reset()
+        on_release : root.gameStart(), root.play_sound()  
+
+    Button:
+        background_color : (1, 0, 0, 1)
+        id : btn1
+        text : root.btn_string
+        size_hint : None, None
+        on_press : root.gameStart()
+        on_release : root.start_move(), root.play_sound()
+
+    Label:
+        id : lblscore
+        size_hint : 0.1, 0.1
+        text : "SCORE: " + str(int(root.score/47))
+        color : (255/256,69/255, 0)
+
+      
